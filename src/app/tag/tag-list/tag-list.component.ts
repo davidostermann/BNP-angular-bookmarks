@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Tag } from './../../core/tag';
 import { Component, OnInit } from '@angular/core';
 import { TagService } from '../../tag.service';
@@ -13,9 +14,27 @@ export class TagListComponent implements OnInit {
   constructor(private tagService: TagService) { }
 
   ngOnInit() {
-    this.tagService.getAll().subscribe((list) => {
-      this.tags = list;
-    })
+    this.refresh();
   }
+
+  refresh() {
+    this.tagService.getAll().subscribe(list => {
+      this.tags = list;
+    });
+  }
+
+  delete(id: string) {
+    this.tagService.delete(id).subscribe(
+      () => {
+        console.log('bien supprimé !');
+        this.refresh();
+      },
+      (err) => {
+        console.log({err});
+        this.refresh();
+      });
+  }
+
+
 
 }

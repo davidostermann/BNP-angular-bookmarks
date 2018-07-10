@@ -13,6 +13,7 @@ import { DetailsComponent } from './tag/details/details.component';
 import { TagListComponent } from './tag/tag-list/tag-list.component';
 import { TagFormComponent } from './tag/tag-form/tag-form.component';
 import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     ListComponent,
     DetailsComponent,
     TagListComponent,
-    TagFormComponent
+    TagFormComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

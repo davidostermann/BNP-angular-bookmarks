@@ -1,7 +1,7 @@
 import { Tag } from './tag';
 import { Bookmark } from './bookmark';
 export interface Author {
-  id: string;
+  id?: string;
   firstName: string;
   lastName: string;
   tags?: Tag[];

@@ -1,9 +1,7 @@
 import { Tag } from './../../core/tag';
 import { TagService } from './../../tag.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { NullTemplateVisitor } from '@angular/compiler';
-import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tag-form',
@@ -12,7 +10,10 @@ import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class TagFormComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private tagService: TagService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private tagService: TagService) {}
 
   tag: Tag;
 
@@ -35,14 +36,16 @@ export class TagFormComponent implements OnInit {
     if(this.tag.id) {
       // edition
       this.tagService.update(this.tag).subscribe((tag: Tag) => {
-        console.log({ tag });
-        this.tag = tag;
+        // console.log({ tag });
+        // this.tag = tag;
+        this.router.navigateByUrl('/tags');
       });
     } else {
       // creation
       this.tagService.create(this.tag).subscribe((tag: Tag) => {
-        console.log({ tag });
-        this.tag = tag;
+        // console.log({ tag });
+        // this.tag = tag;
+        this.router.navigateByUrl('/tags');
       });
     }
 

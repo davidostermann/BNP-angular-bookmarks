@@ -4,6 +4,7 @@ import { DetailsComponent } from './tag/details/details.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListComponent } from './bookmark/list/list.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path: 'bookmarks', component: ListComponent},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'tag/create', component: TagFormComponent},
   {path: 'tag/:id', component: DetailsComponent},
   {path: 'tag/:id/edit', component: TagFormComponent}
+  {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({

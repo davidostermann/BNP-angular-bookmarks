@@ -24,6 +24,10 @@ export class TagService {
     return this.http.put<Tag>(this.API_URL + tag.id, tag);
   }
 
+  delete(id: string): Observable<Tag> {
+    return this.http.delete<Tag>(this.API_URL + id);
+  }
+
   create(tag: Tag): Observable<Tag> {
     const authoringTag: Tag = { ...tag, author: '5b426e7cc75a0fae804b9c12' };
     return this.http.post<Tag>(this.API_URL, authoringTag);

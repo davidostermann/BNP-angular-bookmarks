@@ -1,0 +1,13 @@
+<form *ngIf="author" (ngSubmit)="create()">
+  <mat-form-field>
+    <input matInput name="firstName"
+          placeholder="saisir un prénom"
+          [(ngModel)]="author.firstName" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="lastName"
+          placeholder="saisir un nom"
+          [(ngModel)]="author.lastName" />
+  </mat-form-field>
+  <button>Envoyer</button>
+</form>
