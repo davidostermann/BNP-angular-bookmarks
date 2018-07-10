@@ -8,9 +8,21 @@ import { Injectable } from '@angular/core';
 })
 export class TagService {
 
-  constructor(private http: HttpClient) { }
+  API_URL = 'https://bnppf1-bookmarks.herokuapp.com/tag/';
+
+  constructor(private http: HttpClient) {}
 
   getById(id: string): Observable<Tag> {
-    return this.http.get<Tag>('https://bnppf1-bookmarks.herokuapp.com/tag/' + id);
+    return this.http.get<Tag>(
+      this.API_URL + id
+    );
+  }
+
+  getAll(): Observable<Tag[]> {
+    return this.http.get<Tag[]>(this.API_URL);
+  }
+
+  update(tag: Tag): Observable<Tag> {
+    return this.http.put<Tag>(this.API_URL + tag.id, tag);
   }
 }

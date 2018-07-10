@@ -1,0 +1,11 @@
+<mat-list>
+  <mat-list-item *ngFor="let tag of tags">
+      <div matLine>{{ tag.label }}</div>
+      <button mat-icon-button routerLink="/tag/{{tag.id}}/edit">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>delete</mat-icon>
+      </button>
+  </mat-list-item>
+</mat-list>

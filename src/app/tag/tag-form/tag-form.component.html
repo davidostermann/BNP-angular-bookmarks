@@ -1,0 +1,8 @@
+<form *ngIf="tag" (ngSubmit)="onSubmit()" >
+  <mat-form-field>
+    <input matInput name="label"
+           placeholder="saisir un label"
+           [(ngModel)]="tag.label"/>
+  </mat-form-field>
+  <button>Envoyer</button>
+</form>

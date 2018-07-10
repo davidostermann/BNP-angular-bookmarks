@@ -6,29 +6,36 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatChipsModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatChipsModule, MatInput, MatInputModule } from '@angular/material';
 import { ListComponent } from './bookmark/list/list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './tag/details/details.component';
+import { TagListComponent } from './tag/tag-list/tag-list.component';
+import { TagFormComponent } from './tag/tag-form/tag-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     ListComponent,
-    DetailsComponent
+    DetailsComponent,
+    TagListComponent,
+    TagFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    FormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
     MatChipsModule,
+    MatInputModule,
     HttpClientModule
   ],
   providers: [],
