@@ -8,6 +8,7 @@ import { ListComponent } from './bookmark/list/list.component';
 const routes: Routes = [
   {path: 'bookmarks', component: ListComponent},
   {path: 'tags', component: TagListComponent},
+  {path: 'tag/create', component: TagFormComponent},
   {path: 'tag/:id', component: DetailsComponent},
   {path: 'tag/:id/edit', component: TagFormComponent}
 ];

@@ -1,14 +1,11 @@
-<h1>
-  {{ tag.label }}
-</h1>
+<div *ngIf="tag">
+  <h1>
+    {{ tag.label }}
+  </h1>
 
-<mat-list>
-  <mat-list-item *ngFor="let bm of tag.bookmarks">
-    <div matLine>{{ bm.title }}</div>
-    <!-- <mat-chip-list matLine>
-      <mat-chip *ngFor="let tag of bm.tags" selected color="primary" routerLink="/tag/{{tag.id}}">
-        {{ tag.label }}
-      </mat-chip>
-    </mat-chip-list> -->
-  </mat-list-item>
-</mat-list>
+  <mat-list>
+    <mat-list-item *ngFor="let bm of tag.bookmarks">
+      <div matLine>{{ bm.title }}</div>
+    </mat-list-item>
+  </mat-list>
+</div>
