@@ -1,0 +1,13 @@
+<h1>Ceci est un test de [(ngModel)] dans un *ngFor</h1>
+<table>
+  <tbody>
+    <tr *ngFor="let item of list">
+      <td>
+        <input type="text" [(ngModel)]="item.name">
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="item.ig">
+      </td>
+    </tr>
+  </tbody>
+</table>

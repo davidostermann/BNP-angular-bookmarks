@@ -5,14 +5,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListComponent } from './bookmark/list/list.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MultiNgModelComponent } from './multi-ng-model/multi-ng-model.component';
 
 const routes: Routes = [
   {path: 'bookmarks', component: ListComponent},
   {path: 'tags', component: TagListComponent},
   {path: 'tag/create', component: TagFormComponent},
   {path: 'tag/:id', component: DetailsComponent},
-  {path: 'tag/:id/edit', component: TagFormComponent}
-  {path: 'profile', component: ProfileComponent}
+  {path: 'tag/:id/edit', component: TagFormComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'multi-ng-model', component: MultiNgModelComponent}
 ];
 
 @NgModule({

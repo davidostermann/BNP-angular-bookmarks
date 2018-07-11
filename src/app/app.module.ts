@@ -14,6 +14,7 @@ import { TagListComponent } from './tag/tag-list/tag-list.component';
 import { TagFormComponent } from './tag/tag-form/tag-form.component';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { MultiNgModelComponent } from './multi-ng-model/multi-ng-model.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProfileComponent } from './profile/profile.component';
     DetailsComponent,
     TagListComponent,
     TagFormComponent,
-    ProfileComponent
+    ProfileComponent,
+    MultiNgModelComponent
   ],
   imports: [
     BrowserModule,
