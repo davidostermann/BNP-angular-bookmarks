@@ -10,6 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class TagFormComponent implements OnInit {
 
+  // en cas d'erreur
+  errorMsg: string;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -33,19 +36,24 @@ export class TagFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.tag.id) {
+    if (this.tag.id) {
       // edition
       this.tagService.update(this.tag).subscribe((tag: Tag) => {
-        // console.log({ tag });
+        console.log({ tag });
         // this.tag = tag;
         this.router.navigateByUrl('/tags');
+      }, (err) => {
+        console.log({err});
       });
     } else {
       // creation
       this.tagService.create(this.tag).subscribe((tag: Tag) => {
-        // console.log({ tag });
+        console.log({ tag });
         // this.tag = tag;
         this.router.navigateByUrl('/tags');
+      }, (err: Error) => {
+        console.log({ err });
+        this.errorMsg = err.message;
       });
     }
 
